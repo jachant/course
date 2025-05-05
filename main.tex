@@ -83,7 +83,7 @@
 
 
  \\Научный руководитель:\\
- Сотрудник компании Yadro\\ 
+ Старший преподаватель\\ 
 Воевоводкин Вадим Сергеевич\\
   \vspace{1cm}
  {\hspace{2.5cm}}
@@ -1036,6 +1036,55 @@ BERTScore использует эмбеддинги BERT для сравнени
 
 Работа открывает направление для дальнейших исследований взаимосвязи между качеством данных, архитектурой моделей и метриками оценки в условиях растущей сложности программных систем \cite{liu2022survey, zaheer2020bigbird}.
 
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{xlcost-meta-llama.png}
+    \caption{Метрики для модели xlcost-meta-llama.json} \cite{github_repo}
+    \label{fig:xlcost}
+\end{figure}
+    
+    \vspace{1em}
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{code_x-meta-llama.png}
+    \caption{Метрики для модели xlcost-meta-llama.json} \cite{github_repo}
+    \label{fig:code_x}
+\end{figure}
+
+    
+    \vspace{1em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{code_search-meta-llama.png}
+    \caption{Метрики для модели xlcost-meta-llama.json} \cite{github_repo}
+    \label{fig:code_search}
+\end{figure}
+
+
+
+\caption{Сравнение метрик для разных моделей}
+
+
+
+% Общее описание
+На представленных диаграммах (рис.~\ref{fig:xlcost}, \ref{fig:code_x}, \ref{fig:code_search}) видно, что:
+
+    
+- Метрики семантического сходства (\textbf{BERTScore}) показывают высокие значения для всех моделей, что указывает на хорошее понимание контекста.
+    
+- Традиционные метрики (\textbf{ROUGE}, \textbf{BLEU}) дают значительно более низкие оценки, особенно для модели \texttt{xlcost-meta-llama.json} (рис.~\ref{fig:xlcost}), что может быть связано с их чувствительностью к точному совпадению n-грамм.
+    
+- Отрицательные значения \textbf{Avg BLEURT} для всех моделей свидетельствуют о том, что генерируемые суммаризации воспринимаются как менее естественные по сравнению с эталонными.
+    
+- Модель \texttt{code\_x-meta-llama.json} (рис.~\ref{fig:code_x}) демонстрирует лучшие результаты по \textbf{ROUGE} и \textbf{BLEU}, что может быть связано с оптимизацией под задачи кодирования.
+    
+- Разброс значений \textbf{METEOR} (от 0.13 до 0.38) указывает на необходимость дальнейшей настройки метрик для специфичных задач.
+
+
+Эти данные подтверждают важность использования комбинированных подходов при оценке LLM в контексте кодовой суммаризации.
+
 
 
 
@@ -1129,6 +1178,9 @@ Zhang, J. Retrieval-based Neural Code Generation / J. Zhang, X. Wang, C. Sun // 
 
 \bibitem{xlcost_repo} 
 XLCoST Repository. — URL: \url{https://github.com/XLCOST/} (accessed: 15.05.2024).
+
+\bibitem{github_repo} 
+jachant. Course: репозиторий с метриками оценки LLM для суммаризации кода / jachant // GitHub. — 2023. — URL: \url{https://github.com/jachant/course?tab=readme-ov-file} (дата обращения: 20.10.2023).
 
 \bibitem{zhou2022devign} 
 Zhou, Y. Devign: Effective Vulnerability Detection Through Neural Networks / Y. Zhou [et al.] // IEEE S\&P. — 2022.
